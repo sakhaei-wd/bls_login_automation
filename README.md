@@ -178,3 +178,13 @@ debug/stage2_captcha_page.html
 - CAPTCHA solving is intentionally not implemented.
 - The implementation demonstrates session handling, cookie preservation, anti-forgery token reuse, dynamic field extraction, and payload generation.
 - The expected Stage 2 result is HTTP 200 with an invalid captcha selection response, because all 9 images are submitted by design.
+
+## Stage 1 field auto-discovery
+
+The login page uses obfuscated/random input names and may return HTTP 200 with a `/Login?err=...` URL when the e-mail is placed in the wrong dynamic field. The implementation ranks likely e-mail fields and, when no explicit `BLS_STAGE1_EMAIL_FIELD` is configured, retries candidates with a fresh GET/token until the captcha URL is reached. The successful field is printed as `Stage 1 selected e-mail field`.
+
+For deterministic runs after a successful attempt, copy that printed field into `.env` as:
+
+```env
+BLS_STAGE1_EMAIL_FIELD=the_printed_field_name
+```
