@@ -1,0 +1,10 @@
+LOGIN_PATH = "/Global/account/login"
+LOGIN_SUBMIT_PATH = "/Global/account/LoginSubmit"
+CAPTCHA_SUBMIT_PATH = "/Global/NewCaptcha/LoginCaptchaSubmit"
+
+REQUEST_VERIFICATION_FIELD = "__RequestVerificationToken"
+RESPONSE_DATA_FIELD = "ResponseData"
+SELECTED_IMAGES_FIELD = "SelectedImages"
+PARAM_FIELD = "Param"
+ID_FIELD = "Id"
+RETURN_URL_FIELD = "ReturnUrl"
