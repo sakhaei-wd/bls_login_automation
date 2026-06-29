@@ -188,3 +188,9 @@ For deterministic runs after a successful attempt, copy that printed field into 
 ```env
 BLS_STAGE1_EMAIL_FIELD=the_printed_field_name
 ```
+
+## Notes
+
+During the implementation I intentionally focused on reproducing the HTTP request flow instead of browser automation. The goal was to understand how the application generates its dynamic payloads, preserves session state, and validates requests.
+
+The CAPTCHA itself was intentionally not solved, as requested in the task. Instead, the implementation dynamically extracts the image identifiers and reproduces the request generation process programmatically.
